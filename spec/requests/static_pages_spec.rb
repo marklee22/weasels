@@ -27,6 +27,11 @@ describe "StaticPages" do
       before { click_link 'Sign Up Now' }
       it { should have_selector('title', text: 'Sign Up') }
     end    
+    
+    describe "when clicking Sign In button" do
+      before { click_link 'Sign In' }
+      it { should have_selector('title', text: 'Sign In') }
+    end
   end
   
   describe "Help" do
@@ -45,6 +50,6 @@ describe "StaticPages" do
     before { visit contact_path }
     it { should have_selector('title', text: 'Contact Us') }
     it { should have_selector('h1', text: 'Contact Us') }
-  end
+  end  
   
 end

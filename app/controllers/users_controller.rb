@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
+  before_filter :signed_in_user, only: [:index, :update, :edit, :destroy]
+  
   def index
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     @user = User.find(params[:id])
 
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
@@ -26,6 +25,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      sign_in @user
+      flash[:success] = "Success!"
       redirect_to root_path
     else
       render 'new'

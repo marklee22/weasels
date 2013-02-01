@@ -1,5 +1,6 @@
 Weasels::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:create, :destroy]
   
   root :to => "staticPages#home"
   
@@ -7,6 +8,8 @@ Weasels::Application.routes.draw do
   match '/about' => 'static_pages#about'
   match '/contact' => 'static_pages#contact'
   match '/help' => 'static_pages#help'
+  match '/signin' => 'sessions#new'
+  match '/signout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

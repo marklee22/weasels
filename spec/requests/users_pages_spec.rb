@@ -32,7 +32,10 @@ describe "Users" do
       describe "after hitting submit" do
         before { click_button submit }
         it { should have_selector('title', text: 'Home') }
-      end
+        it { should have_selector('div.alert-success', text: 'Success') }
+        it { should have_link('Sign Out') }
+        it { should_not have_link('Sign In') }
+      end    
     end
     
     describe "with invalid information" do
