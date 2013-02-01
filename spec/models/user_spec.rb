@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe User do
   before do
-    @user = User.new(first_name: "Mark", last_name: "Lee", email: "MarkLee805@gmail.com")
+    @user = User.new(first_name: "Mark", last_name: "Lee", email: "MarkLee805@gmail.com",
+      password: "password", password_confirmation: "password")
   end
   
   subject { @user }
@@ -10,6 +11,11 @@ describe User do
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
   it { should respond_to(:email) }
+  it { should respond_to(:password_digest) }
+  it { should respond_to(:password) }
+  it { should respond_to(:password_confirmation) }
+
+  it { should be_valid }
 
   describe "when first name is blank" do
     before { @user.first_name = " " }
@@ -26,10 +32,33 @@ describe User do
     it { should_not be_valid }
   end
   
-  pending "when password is blank" do
+  describe "when password is blank" do
+    before { @user.password = " " }
+    it { should_not be_valid }
   end
   
-
+  describe "when password confirmation is blank" do
+    before { @user.password_confirmation = ' ' }
+    it { should_not be_valid }
+  end
+  
+  describe "when password is nil" do
+    before { @user.password = nil }
+    it { should_not be_valid }
+  end
+  
+  describe "when password is less than 6 characters long" do
+    before { @user.password = @user.password_confirmation = "a" * 5 }
+    it { should_not be_valid }
+  end
+  
+  describe "when password and password confirmation not equal" do
+    before do
+      @user.password = "password"
+      @user.password_confirmation = "not_password"
+    end
+    it { should_not be_valid }
+  end
   
   describe "when first name is over 35 characters" do
     before { @user.first_name = "a" * 36 }
@@ -39,9 +68,6 @@ describe User do
   describe "last name is over 35 characters" do
     before { @user.last_name = "a" * 36 }
     it { should_not be_valid }
-  end
-  
-  pending "when password and confirmation password differ" do
   end
   
   describe "duplicate email address" do

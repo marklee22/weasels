@@ -1,9 +1,12 @@
 Weasels::Application.routes.draw do
   resources :users
   
-
-
-  get "static_pages/home"
+  root :to => "staticPages#home"
+  
+  match '/signup' => 'users#new'
+  match '/about' => 'static_pages#about'
+  match '/contact' => 'static_pages#contact'
+  match '/help' => 'static_pages#help'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
