@@ -19,6 +19,7 @@ describe "AuthenticationPages" do
       end
       it { should have_css('div.alert-success', text: 'Success') }
       it { should have_link('Sign Out') }
+      it { should have_selector('title', text: 'Edit User') }
       
       describe "clicking Sign Out" do
         before { click_link 'Sign Out' }
@@ -39,17 +40,42 @@ describe "AuthenticationPages" do
   end
   
   describe "Authorization" do
-    describe "in Users controller" do      
-      describe "when user not signed in" do 
+    describe "for non-signed in users" do
+      describe "in Users controller" do      
         describe "visiting user edit page" do
           before { visit edit_user_path user }
           it { should have_selector('title', text: 'Sign In') }
         end
-        
+      
         describe "visiting users page" do
           before { visit users_path }
           it { should have_selector('title', text: 'Sign In') }
         end
+      
+        describe "submitting put to the update action" do
+          before { put user_path(user) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
+    end
+      
+    describe "as wrong user" do
+      let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@test.com") }
+      before { sign_in user }
+      
+      describe "editting other user" do
+        before { visit edit_user_path(wrong_user) }
+        it { should_not have_selector('title', text: 'Edit User') }
+      end
+      
+      pending "submitting put to the wrong user" do
+        before { put user_path(wrong_user) }
+        specify { response.should redirect_to(root_path) }
+      end
+      
+      pending "submitting delete to the wrong user" do
+        before { delete user_path(wrong_user) }
+        specify { response.should redirect_to(root_path) }
       end
     end
   end

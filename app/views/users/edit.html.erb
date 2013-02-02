@@ -1,4 +1,5 @@
-<h1>Update your profile</h1>
+<% provide(:title, 'Edit User') %>
+<h1>Edit User</h1>
 
 <%= form_for(@user, :html => { class: 'form-horizontal' }) do |f| %>
   <% if @user.errors.any? %>
@@ -49,7 +50,3 @@
 		</div>
   </div>
 <% end %>
-
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
