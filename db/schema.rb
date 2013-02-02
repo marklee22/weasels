@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130201185153) do
+ActiveRecord::Schema.define(:version => 20130202044049) do
+
+  create_table "nfl_teams", :force => true do |t|
+    t.string   "location"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "abbr"
+  end
+
+  add_index "nfl_teams", ["location"], :name => "index_nfl_teams_on_location"
+  add_index "nfl_teams", ["name"], :name => "index_nfl_teams_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

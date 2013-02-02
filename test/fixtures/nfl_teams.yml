@@ -1,0 +1,255 @@
+ARI:
+  id: 1
+  location: Arizona
+  name: Cardinals
+  abbr: ARI
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+ATL:
+  id: 2
+  location: Atlanta
+  name: Falcons
+  abbr: ATL
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+BAL:
+  id: 3
+  location: Baltimore
+  name: Ravens
+  abbr: BAL
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+BUF:
+  id: 4
+  location: Buffalo
+  name: Bills
+  abbr: BUF
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+CAR:
+  id: 5
+  location: Carolina
+  name: Panthers
+  abbr: CAR
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+CHI: 
+  id: 6
+  location: Chicago
+  name: Bears
+  abbr: CHI
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+CIN: 
+  id: 7
+  location: Cincinnati
+  name: Bengals
+  abbr: CIN
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+CLE:
+  id: 8
+  location: Cleveland
+  name: Browns
+  abbr: CLE
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+DAL:
+  id: 9
+  location: Dallas
+  name: Cowboys
+  abbr: DAL
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+DEN:
+  id: 10
+  location: Denver
+  name: Broncos
+  abbr: DEN
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+DET:
+  id: 11
+  location: Detroit
+  name: Lions
+  abbr: DET
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+GB:
+  id: 12
+  location: Green Bay
+  name: Packers
+  abbr: GB
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+HOU:
+  id: 13
+  location: Houston
+  name: Texans
+  abbr: HOU
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+IND:
+  id: 14
+  location: Indianapolis
+  name: Colts
+  abbr: IND
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+JAX:
+  id: 15
+  location: Jacksonville
+  name: Jaguars
+  abbr: JAX
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+KC:
+  id: 16
+  location: Kansas City
+  name: Chiefs
+  abbr: KC
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+MIA:
+  id: 17
+  location: Miami
+  name: Dolphins
+  abbr: MIA
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+MIN:
+  id: 18
+  location: Minnesota
+  name: Vikings
+  abbr: MIN
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+NE:
+  id: 19
+  location: New England
+  name: Patriots
+  abbr: NE
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+NO:
+  id: 20
+  location: New Orleans
+  name: Saints
+  abbr: 'NO'
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+NYG:
+  id: 21
+  location: New York 
+  name: Giants
+  abbr: NYG
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+NYJ:
+  id: 22
+  location: New York
+  name: Jets
+  abbr: NYJ
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+OAK:
+  id: 23
+  location: Oakland
+  name: Raiders
+  abbr: OAK
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+PHI:
+  id: 24
+  location: Philadelphia
+  name: Eagles
+  abbr: PHI
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+PIT:
+  id: 25
+  location: Pittsburgh
+  name: Steelers
+  abbr: PIT
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+SD:
+  id: 26
+  location: San Diego
+  name: Chargers
+  abbr: SD
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+SEA:
+  id: 27
+  location: Seattle
+  name: Seahawks
+  abbr: SEA
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+SF:
+  id: 28
+  location: San Francisco
+  name: 49ers
+  abbr: SF
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+STL:
+  id: 29
+  location: St Louis
+  name: Rams
+  abbr: STL
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+TB:
+  id: 30
+  location: Tampa Bay
+  name: Buccaneers
+  abbr: TB
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+TEN:
+  id: 31
+  location: Tennessee
+  name: Titans
+  abbr: TEN
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+WAS:
+  id: 32
+  location: Washington
+  name: Redskins
+  abbr: WAS
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
