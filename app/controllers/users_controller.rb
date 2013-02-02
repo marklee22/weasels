@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :update, :edit, :destroy]
+  before_filter :correct_user, only: [:destroy, :update, :edit]
   
   def index
     @users = User.all
@@ -19,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def create
@@ -33,31 +33,25 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Profile updated"
+      sign_in(@user)
+      redirect_to(@user)
+    else
+      render 'edit'
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Account Destroyed"
+    redirect_to root_path
   end
+  
+  private
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless @user == current_user
+    end
 end

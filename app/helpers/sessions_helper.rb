@@ -18,8 +18,8 @@ module SessionsHelper
   end
   
   def signed_in_user
-    if(!current_user)
-      redirect_to signin_path
+    if(current_user.nil?)
+      redirect_to signin_url, notice: "Please sign in"
     end
   end
 end
