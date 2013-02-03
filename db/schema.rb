@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202044049) do
+ActiveRecord::Schema.define(:version => 20130202055049) do
 
   create_table "nfl_teams", :force => true do |t|
     t.string   "location"
@@ -23,6 +23,33 @@ ActiveRecord::Schema.define(:version => 20130202044049) do
 
   add_index "nfl_teams", ["location"], :name => "index_nfl_teams_on_location"
   add_index "nfl_teams", ["name"], :name => "index_nfl_teams_on_name"
+
+  create_table "picks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "pick_team_id"
+    t.integer  "spread_id"
+    t.integer  "wildcard"
+    t.boolean  "bye"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "picks", ["spread_id"], :name => "index_picks_on_spread_id"
+  add_index "picks", ["user_id"], :name => "index_picks_on_user_id"
+
+  create_table "spreads", :force => true do |t|
+    t.integer  "year"
+    t.integer  "week"
+    t.integer  "favored_team_id"
+    t.integer  "under_team_id"
+    t.decimal  "spread"
+    t.boolean  "favored_won"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "spreads", ["week"], :name => "index_spreads_on_week"
+  add_index "spreads", ["year"], :name => "index_spreads_on_year"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
