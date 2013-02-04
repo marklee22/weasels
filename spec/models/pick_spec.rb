@@ -31,8 +31,4 @@ describe Pick do
     before { @pick.wildcard = 10 }
     it { should_not be_valid }
   end
-  
-  pending "with default values" do
-  end
-
 end

@@ -52,4 +52,10 @@ describe "StaticPages" do
     it { should have_selector('h1', text: 'Contact Us') }
   end  
   
+  describe "Spreads" do
+    before { visit spreads_path }
+    it { should have_selector('title', text: 'Spreads') }
+    it { should have_selector('h1', text: 'Spreads') }
+  end
+  
 end

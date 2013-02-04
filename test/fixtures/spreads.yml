@@ -1,0 +1,161 @@
+a:
+  id: 1
+  favored_team_id: 2
+  under_team_id: 11
+  spread: 3.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+b:
+  id: 2
+  favored_team_id: 17
+  under_team_id: 4
+  spread: 4
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+c:
+  id: 3
+  favored_team_id: 21
+  under_team_id: 3
+  spread: 1.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+d:
+  id: 4
+  favored_team_id: 13
+  under_team_id: 18
+  spread: 7
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+e:
+  id: 5
+  favored_team_id: 10
+  under_team_id: 8
+  spread: 12.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+f:
+  id: 6
+  favored_team_id: 30
+  under_team_id: 29
+  spread: 3
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+g:
+  id: 7
+  favored_team_id: 28
+  under_team_id: 27
+  spread: 1
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+h:
+  id: 8
+  favored_team_id: 25
+  under_team_id: 7
+  spread: 3.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+    
+  
+i:
+  id: 9
+  favored_team_id: 32
+  under_team_id: 24
+  spread: 6
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+j:
+  id: 10
+  favored_team_id: 9
+  under_team_id: 20
+  spread: 2.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+k:
+  id: 11
+  favored_team_id: 14
+  under_team_id: 16
+  spread: 6.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+l:
+  id: 12
+  favored_team_id: 19
+  under_team_id: 15
+  spread: 14
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+m:
+  id: 13
+  favored_team_id: 12
+  under_team_id: 31
+  spread: 11.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+n:
+  id: 14
+  favored_team_id: 6
+  under_team_id: 1
+  spread: 5.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+o:
+  id: 15
+  favored_team_id: 5
+  under_team_id: 23
+  spread: 7.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+p:
+  id: 16
+  favored_team_id: 22
+  under_team_id: 26
+  spread: 2.5
+  week: 16
+  year: 2012
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  

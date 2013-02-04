@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe Spread do
   before do
-    @spread = Spread.new(favored_team_id: 1, under_team_id: 2, spread: 5,
-    week: 1, year: 2012, favored_won: true)
+    @spread = Spread.new(favored_team_id: 1, under_team_id: 2, spread: 5, week: 1, year: 2012, favored_won: true)
   end
   
   subject { @spread }

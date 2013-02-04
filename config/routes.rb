@@ -7,6 +7,7 @@ Weasels::Application.routes.draw do
   match '/signup' => 'users#new'
   match '/about' => 'static_pages#about'
   match '/contact' => 'static_pages#contact'
+  match '/spreads' => 'static_pages#spreads'
   match '/help' => 'static_pages#help'
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy'

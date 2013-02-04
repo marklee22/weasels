@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :password, :password_confirmation
   
   has_many :picks, dependent: :destroy
+  validates_associated :picks
   
   before_save :create_remember_token
   before_save { |user| user.email = email.downcase }
