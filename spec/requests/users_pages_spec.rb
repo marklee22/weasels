@@ -4,7 +4,7 @@ describe "Users" do
 
   subject { page }
 
-  describe "Sign Up" do
+  describe "sign Up" do
     let(:submit) { "Register" }
     before { visit signup_path }
     
@@ -48,6 +48,11 @@ describe "Users" do
         it { should have_selector('div', id:'error_explanation') }
         it { should have_selector('title', text: 'Sign Up') }
       end
+    end
+  end
+
+  describe "profile page" do
+    describe "picks" do
     end
   end
 end
