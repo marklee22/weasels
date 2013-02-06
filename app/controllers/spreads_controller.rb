@@ -33,7 +33,7 @@ class SpreadsController < ApplicationController
         end
         @spreads.push(spread)
       end
-      render 'edit'
+      redirect_to spreads_path
     else
       flash[:error] = "Missing fields"
       render 'new'
