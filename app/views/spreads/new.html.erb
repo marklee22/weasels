@@ -1,0 +1,23 @@
+<% provide(:title, 'Upload Spreads') %>
+<h1>Upload Spreads</h1>
+<p>Upload new spreads here.</p>
+<pre>
+Enter the NFL year and week of the spreads you're uploading.  This will overwrite all spreads of that NFL week.  Expected format of the text is tab delimited.  The upload will automatically parse the teams and spreads.
+
+Example from <u><a href="http://www.footballlocks.com/nfl_lines.shtml">NFL Football Locks</a></u>:
+Date  Time	Favorite	Line	Underdog	Total
+11/29 8:25 ET	At Atlanta	-3.5	New Orleans	54.5
+12/2 1:00 ET	At Chicago	-3	Seattle		37
+12/2 1:00 ET	At Green Bay	-7.5	Minnesota	47
+...
+	
+</pre>
+<%= form_tag({:action => :upload}, :multipart => true) do %>
+	<%= label_tag(:nfl_year, 'NFL Year') %>
+	<%= text_field_tag(:nfl_year) %><br/>
+	<%= label_tag(:nfl_week, 'NFL Week') %>
+	<%= text_field_tag(:nfl_week) %><br/>
+	<%= label_tag(:csv_file, 'Browse to File')%>
+	<%= file_field_tag(:csv_file) %><br/>
+	<%= submit_tag("Upload") %>
+<% end%>

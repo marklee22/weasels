@@ -8,13 +8,7 @@ class StaticPagesController < ApplicationController
   def contact
   end
   
-  def help
+  def rules
   end
-  
-  def spreads
-    @nfl_week = 16
-    @nfl_year = 2012
-    @spreads = Spread.where(week: @nfl_week, year: @nfl_year)
-  end
-  
+
 end

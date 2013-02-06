@@ -9,4 +9,4 @@
 require 'active_record/fixtures'
 
 ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures", "nfl_teams")
-ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures", "spreads")
+#ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures", "spreads")

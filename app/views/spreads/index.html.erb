@@ -1,0 +1,45 @@
+<% provide(:title, 'Spreads') %>
+<h1>Spreads</h1>
+<h3>Week <%= "#{@nfl_week} - #{@nfl_year}" %></h3>
+
+<%= link_to('Upload spreads', new_spread_path) %>
+<%= form_tag({:action => :index }, :method => "get") do %>
+	<%= label_tag(:year, 'Year') %>
+	<%= select(:spread, :year, @years, :selected => @nfl_year)%>
+	<%= label_tag(:week, 'Week') %>
+	<%= select(:spread, :week, @weeks, :selected => @nfl_week) %><br/>
+	<%= submit_tag("Lookup") %>
+<% end %>
+<% if(@spreads) %>
+<table class="table table-striped">
+	<thead>
+		<th>Favorite</th>
+		<th>Spread</th>
+		<th>Underdog</th>
+	</thead>
+	<tbody>
+		<% @spreads.each do |spread| %>
+			<tr>
+				<td>
+					<% if(spread.is_favored_home_team) %>
+						<%= "#{spread.favored_team.location} #{spread.favored_team.name}".upcase %>
+					<% else %>
+						<%= "#{spread.favored_team.location} #{spread.favored_team.name}" %>
+					<% end %>
+				</td>
+				<td>
+					<%= spread.spread %>
+				</td>
+				<td>
+					<% if(spread.is_favored_home_team) %>
+						<%= "#{spread.under_team.location} #{spread.under_team.name}" %>
+					<% else %>
+						<%= "#{spread.under_team.location} #{spread.under_team.name}".upcase %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>
+			

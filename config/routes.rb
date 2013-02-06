@@ -1,4 +1,10 @@
 Weasels::Application.routes.draw do
+
+  resources :spreads do
+    collection do
+      post 'upload'
+    end
+  end
   resources :users
   resources :sessions, only: [:create, :destroy]
   
@@ -7,8 +13,7 @@ Weasels::Application.routes.draw do
   match '/signup' => 'users#new'
   match '/about' => 'static_pages#about'
   match '/contact' => 'static_pages#contact'
-  match '/spreads' => 'static_pages#spreads'
-  match '/help' => 'static_pages#help'
+  match '/rules' => 'static_pages#rules'
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy'
 

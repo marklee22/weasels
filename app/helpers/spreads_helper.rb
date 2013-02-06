@@ -1,0 +1,2 @@
+module SpreadsHelper
+end
