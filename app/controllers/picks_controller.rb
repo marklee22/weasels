@@ -1,6 +1,6 @@
 class PicksController < ApplicationController
   before_filter :signed_in_user, only: [:destroy, :create]
-  before_filter :correct_user, only: :destroy
+  before_filter :correct_user, only: [:destroy, :update, :new, :edit]
   
   def new
     if(params[:bye])
@@ -27,7 +27,17 @@ class PicksController < ApplicationController
   end
   
   def edit
-    redirect_to 'users/show'
+    @pick = current_user.picks.find_by_id(params[:id])
+  end
+  
+  def update
+    logger.info("**UPDATING USER'S PICK**")
+    if(@pick.update_attributes(params[:pick]))
+      flash[:success] = "Pick Updated"
+    else
+      flash[:error] = @pick.errors.messages
+    end
+    redirect_to root_path
   end
   
   private

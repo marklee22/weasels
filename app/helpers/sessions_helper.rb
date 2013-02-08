@@ -16,6 +16,10 @@ module SessionsHelper
     session[:remember_token] = user.remember_token
   end
   
+  def signed_in?
+    !current_user.nil?
+  end
+  
   def sign_out
     @current_user = nil
     session.delete :remember_token

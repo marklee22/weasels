@@ -1,0 +1,27 @@
+<h3><%= @pick.spread.year %> - Week <%= @pick.spread.week %> Pick</h3>
+
+<table class="table table-striped">
+	<thead>
+		<th>Favorite</th>
+		<th>Spread</th>
+		<th>Underdog</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= "#{@pick.spread.favored_team.team_name}" %></td>
+			<td><%= "#{@pick.spread.spread}" %></td>
+			<td><%= "#{@pick.spread.under_team.team_name}" %></td>
+		</tr>
+	</tbody>
+</table>
+
+<%= form_for(@pick) do |f| %>
+	<%= f.hidden_field(:spread_id, value: @pick.spread_id) %>
+	<%= f.hidden_field(:bye, value: false) %>
+	<%= f.label(:pick_team_id, 'Pick') %>
+	<%= f.select(:pick_team_id, options_for_select([["#{@pick.spread.favored_team.team_name}",@pick.spread.favored_team.id],
+		["#{@pick.spread.under_team.team_name}",@pick.spread.under_team.id]])) %>
+	<%= f.label(:wildcard, 'Wildcards') %>
+	<%= f.text_field(:wildcard) %>
+	<br/><%= f.submit('Submit Pick', html: { class: 'btn btn-primary'}) %>
+<% end %>

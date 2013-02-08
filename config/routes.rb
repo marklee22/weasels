@@ -6,7 +6,7 @@ Weasels::Application.routes.draw do
   end
   resources :users
   resources :sessions, only: [:create, :destroy]
-  resources :picks, only: [:create, :destroy, :new]
+  resources :picks
   
   root :to => "staticPages#home"
   

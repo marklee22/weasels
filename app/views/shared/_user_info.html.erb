@@ -1,14 +1,11 @@
-<% provide(:title, 'My Picks') %>
-<h3><%= @user.full_name %>'s Picks</h3>
-
 <div class="row">
 	<aside class="span4">
 		<section>
-			<%= @user.email %>
+			<%= current_user.email %>
 		</section>
 	</aside>
 	<div class="span8">
-		<% if(@user.picks.any?) %>
+		<% if(current_user.picks.any?) %>
 			<table class="table table-striped">
 				<thead>
 					<th>Week</th>
