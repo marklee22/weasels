@@ -7,6 +7,10 @@ module SessionsHelper
     @current_user ||= User.find_by_remember_token(session[:remember_token])
   end
   
+  def current_user?(user)
+    current_user == user
+  end
+  
   def sign_in(user)
     @current_user = user
     session[:remember_token] = user.remember_token

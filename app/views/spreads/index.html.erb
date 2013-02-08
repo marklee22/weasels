@@ -16,6 +16,7 @@
 		<th>Favorite</th>
 		<th>Spread</th>
 		<th>Underdog</th>
+		<th>Pick Game?</th>
 	</thead>
 	<tbody>
 		<% @spreads.each do |spread| %>
@@ -37,6 +38,8 @@
 						<%= "#{spread.under_team.location} #{spread.under_team.name}".upcase %>
 					<% end %>
 				</td>
+				<td>
+					<%= link_to "Pick Game", { controller: 'picks', action: 'new', spread: spread.id } %>
 			</tr>
 		<% end %>
 	</tbody>

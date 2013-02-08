@@ -1,5 +1,4 @@
 Weasels::Application.routes.draw do
-
   resources :spreads do
     collection do
       post 'upload'
@@ -7,6 +6,7 @@ Weasels::Application.routes.draw do
   end
   resources :users
   resources :sessions, only: [:create, :destroy]
+  resources :picks, only: [:create, :destroy, :new]
   
   root :to => "staticPages#home"
   

@@ -1,6 +1,8 @@
 require 'csv'
 
 class SpreadsController < ApplicationController
+  before_filter :signed_in_user
+  
   def new
   end  
   

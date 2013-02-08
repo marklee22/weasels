@@ -12,4 +12,8 @@ class NflTeam < ActiveRecord::Base
   validates :location, presence: true
   validates :name, presence: true
   validates :abbr, presence: true, uniqueness: true
+  
+  def team_name
+    "#{self.location} #{self.name}"
+  end
 end

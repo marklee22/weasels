@@ -1,20 +1,30 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'My Picks') %>
+<h1>My Picks</h1>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h3><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+			<%= @user.email %>
+		</section>
+	</aside>
+	<div class="span8">
+		<% if(@user.picks.any?) %>
+			<table class="table table-striped">
+				<thead>
+					<th>Week</th>
+					<th>Pick</th>
+					<th>Points</th>
+					<th>Wildcards Used</th>
+					<th>Total</th>
+					<th>Options</th>
+				</thead>
+				<tbody>
+					<%= render @picks %>
+				</tbody>
+			</table>
+		<% else %>
+			No Picks
+		<% end %>
+	</div>
+</div>

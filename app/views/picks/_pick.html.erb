@@ -1,0 +1,24 @@
+<tr>
+	<td>
+		<%= "Week #{pick.spread.week}" %>
+	</td>
+	<td>
+		<%= "#{pick.nflTeam.location} #{pick.nflTeam.name}"%>
+	</td>
+	<td>
+		<%= pick.spread.spread %>
+	</td>
+	<td>
+		<%= pick.wildcard %>
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		<!-- Need to fix edit button still -->
+		<% if(current_user?(pick.user))%>
+			<%= link_to "edit", pick, method: :edit, title: pick.id %> |
+			<%= link_to "delete", pick, method: :delete, data: { confirm: "You sure?" }, title: pick.id %>
+		<% end %>
+	</td>
+</tr>
