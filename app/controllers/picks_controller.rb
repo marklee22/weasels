@@ -1,6 +1,6 @@
 class PicksController < ApplicationController
   before_filter :signed_in_user, only: [:destroy, :create]
-  before_filter :correct_user, only: [:destroy, :update, :new, :edit]
+  before_filter :correct_user, only: [:destroy, :update, :edit]
   
   def new
     if(params[:bye])
