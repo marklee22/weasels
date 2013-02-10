@@ -1,0 +1,15 @@
+Date & Time	Favorite	Line	Underdog	Total
+11/15 8:25 ET	At Buffalo	-2.5	Miami	46
+11/18 1:00 ET	At Washington	-3.5	Philadelphia	45.5
+11/18 1:00 ET	Green Bay	-3	At Detroit	53.5
+11/18 1:00 ET	At Atlanta	-9.5	Arizona	43.5
+11/18 1:00 ET	Tampa Bay	-1	At Carolina	47
+11/18 1:00 ET	At Dallas	-7	Cleveland	43.5
+11/18 1:00 ET	At St. Louis	-3.5	NY Jets	38.5
+11/18 4:25 ET	At New England	-10	Indianapolis	54.5
+11/18 1:00 ET	At Houston	-15.5	Jacksonville	40.5
+11/18 1:00 ET	Cincinnati	-3	At Kansas City	42
+11/18 4:05 ET	New Orleans	-6	At Oakland	55.5
+11/18 4:25 ET	At Denver	-7.5	San Diego	48
+11/18 8:30 ET	Baltimore	-3	At Pittsburgh	41
+11/19 8:40 ET	At San Francisco	-3.5	Chicago	34.5

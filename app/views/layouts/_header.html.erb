@@ -1,8 +1,8 @@
-<div class="navbar navbar-static-top">
+<div class="navbar navbar-static-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
 			<ul class="nav" style="float: none">
-				<a class="brand pull-left" href="#">Weasels Pick'Em</a>
+				<%= link_to("Weasel's Pick'Em", root_path, :class => "brand pull-left") %>
 				<ul class="nav pull-right">
 					<li class="divider-vertical"><%= link_to('Home', root_path) %></li>
 					<li class="divider-vertical"><%= link_to('Standings', users_path) %></li>

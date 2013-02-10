@@ -1,27 +1,29 @@
 <% provide(:title, 'Sign In') %>
-<h1>Sign In</h1>
 
-<%= form_for(:sessions, url: sessions_path, :html => { class: 'form-horizontal' }) do |f| %>
-	<div class="control-group">
-    <%= f.label :email, class: 'control-label' %>
-    <div class="controls">
-			<%= f.text_field :email %>
+<div class="hero-unit">
+	<h3 class="sign-in-header sign-in-divider">Sign In</h3>
+	<%= form_for(:sessions, url: sessions_path, :html => { class: 'form-horizontal sign-in-form' }) do |f| %>
+		<div class="control-group">
+	    <%= f.label :email, class: 'control-label' %>
+	    <div class="controls">
+				<%= f.text_field :email %>
+			</div>
+	  </div>
+		<div class="control-group">
+			<%= f.label :password, class: 'control-label' %>
+			<div class="controls">
+				<%= f.password_field :password %>
+			</div>
 		</div>
-  </div>
-	<div class="control-group">
-		<%= f.label :password, class: 'control-label' %>
-		<div class="controls">
-			<%= f.password_field :password %>
+		<div class="control-group">
+			<div class="controls">
+				<%= f.submit 'Sign In', class: 'btn btn-primary' %>
+			</div>
 		</div>
-	</div>
-	<div class="control-group">
-		<div class="controls">
-			<%= f.submit 'Sign In', class: 'btn btn-primary' %>
+		<div class="control-group">
+			<div class="controls">
+				New User? <%= link_to('Sign up here', signup_path) %>
+			</div>
 		</div>
-	</div>
-	<div class="control-group">
-		<div class="controls">
-			New User? <%= link_to('Sign up here', signup_path) %>
-		</div>
-	</div>
-<% end %>
+	<% end %>
+</div>

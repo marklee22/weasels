@@ -1,0 +1,15 @@
+Date & Time	Favorite	Line	Underdog	Total
+11/1 8:25 ET	At San Diego	-7	Kansas City	41
+11/4 1:00 ET	Denver	-5	At Cincinnati	47.5
+11/4 1:00 ET	At Green Bay	-10.5	Arizona	43
+11/4 1:00 ET	Miami	-2	At Indianapolis	43.5
+11/4 1:00 ET	Baltimore	-3.5	At Cleveland	44
+11/4 1:00 ET	At Houston	-11	Buffalo	48
+11/4 1:00 ET	At Washington	-3	Carolina	48
+11/4 1:00 ET	Detroit	-6	At Jacksonville	44
+11/4 1:00 ET	Chicago	-5	At Tennessee	43.5
+11/4 4:05 ET	At Seattle	-4.5	Minnesota	38.5
+11/4 4:05 ET	At Oakland	-1.5	Tampa Bay	47
+11/4 4:25 ET	At NY Giants	-3.5	Pittsburgh	48
+11/4 8:30 ET	At Atlanta	-4	Dallas	47.5
+11/5 8:40 ET	At New Orleans	-3	Philadelphia	52.5

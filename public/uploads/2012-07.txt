@@ -1,0 +1,14 @@
+Date & Time	Favorite	Line	Underdog	Total
+10/18 8:25 ET	At San Francisco	-8	Seattle	37.5
+10/21 1:00 ET	At Buffalo	-4.5	Tennessee	46.5
+10/21 1:00 ET	At Minnesota	-7	Arizona	39
+10/21 1:00 ET	At Indianapolis	-1	Cleveland	46.5
+10/21 1:00 ET	At Houston	-6.5	Baltimore	47.5
+10/21 1:00 ET	Green Bay	-5	At St. Louis	45.5
+10/21 1:00 ET	Dallas	-2.5	At Carolina	45
+10/21 1:00 ET	At NY Giants	-6	Washington	51.5
+10/21 1:00 ET	New Orleans	-1.5	At Tampa Bay	49.5
+10/21 4:25 ET	At New England	-11	NY Jets	47.5
+10/21 4:25 ET	At Oakland	-6	Jacksonville	44.5
+10/21 8:30 ET	Pittsburgh	-1.5	At Cincinnati	47
+10/22 8:40 ET	At Chicago	-6.5	Detroit	45.5

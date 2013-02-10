@@ -1,0 +1,17 @@
+Date & Time	Favorite	Line	Underdog	Total
+9/13 8:20 ET	At Green Bay	-5	Chicago	50.5
+9/16 1:00 ET	At NY Giants	-7.5	Tampa Bay	43.5
+9/16 1:00 ET	At New England	-13.5	Arizona	47
+9/16 1:00 ET	Minnesota	-3	At Indianapolis	45.5
+9/16 1:00 ET	New Orleans	-3	At Carolina	53.5
+9/16 1:00 ET	At Buffalo	-3	Kansas City	45
+9/16 1:00 ET	At Philadelphia	-3	Baltimore	47
+9/16 1:00 ET	Oakland	-1.5	At Miami	41
+9/16 1:00 ET	At Cincinnati	-7	Cleveland	39.5
+9/16 1:00 ET	Houston	-6.5	At Jacksonville	40
+9/16 4:05 ET	Dallas	-3	At Seattle	42.5
+9/16 4:05 ET	Washington	-3.5	At St. Louis	42.5
+9/16 4:25 ET	At Pittsburgh	-4.5	NY Jets	43
+9/16 4:25 ET	At San Diego	-6.5	Tennessee	43.5
+9/16 8:25 ET	At San Francisco	-7	Detroit	46
+9/17 8:35 ET	At Atlanta	-3	Denver	50.5

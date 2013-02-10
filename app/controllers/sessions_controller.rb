@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if(user)
       flash[:success] = "You Successfully signed in"
       sign_in(user)
-      redirect_to edit_user_path(user)
+      redirect_to root_path
     else
       flash.now[:error] = "Invalid Username/Password"
       render 'new'

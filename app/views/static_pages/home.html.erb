@@ -1,10 +1,13 @@
 <% provide(:title, 'Home') %>
-<h1>Home</h1>
 
-<% if(signed_in?)%>
-	<%= render 'shared/user_info' %>
-<% else %>	
-	<div style="margin:0 auto;width:75%;text-align:center">
-		<%= link_to "Sign Up Now", signup_path, class: "btn btn-primary btn-large" %>
-	</div>
-<% end %>
+	<% if(signed_in?)%>
+		<%= render 'shared/user_info' %>
+	<% else %>	
+		<div class="hero-unit center">
+			<h1>Weasel's Pick'Em</h1>
+			<h4>The best league around!</h4>
+			<div style="margin:0 auto;width:75%;text-align:center">
+				<%= link_to "Sign Up Now", signup_path, class: "btn btn-primary btn-large" %>
+			</div>
+		</div>
+	<% end %>

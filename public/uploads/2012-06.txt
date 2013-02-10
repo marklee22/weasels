@@ -1,0 +1,15 @@
+Date & Time	Favorite	Line	Underdog	Total
+10/11 8:25 ET	Pittsburgh	-6	At Tennessee	43
+10/14 1:00 ET	Cincinnati	-1.5	At Cleveland	42
+10/14 1:00 ET	At NY Jets	-3.5	Indianapolis	44
+10/14 1:00 ET	At Tampa Bay	-5	Kansas City	39.5
+10/14 1:00 ET	At Atlanta	-10	Oakland	49
+10/14 1:00 ET	At Baltimore	-3	Dallas	45.5
+10/14 1:00 ET	At Philadelphia	-3.5	Detroit	47.5
+10/14 1:00 ET	At Miami	-5.5	St. Louis	38.5
+10/14 4:05 ET	New England	-4	At Seattle	42.5
+10/14 4:05 ET	At Arizona	-5	Buffalo	44.5
+10/14 4:25 ET	Minnesota	-2	At Washington	44
+10/14 4:25 ET	At San Francisco	-7	NY Giants	47
+10/14 8:30 ET	At Houston	-4	Green Bay	47
+10/15 8:40 ET	At San Diego	 PK	Denver	48
