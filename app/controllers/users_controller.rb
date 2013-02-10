@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @picks = @user.picks
+    @picks = @user.picks.order("created_at ASC")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

@@ -12,6 +12,14 @@ class Pick < ActiveRecord::Base
   validates :user_id, presence: true
   validates :wildcard, presence: true, :inclusion => 0..5
   
+  def is_bye?
+    self.bye
+  end
+  
+  def has_wildcards?
+    self.wildcard > 0
+  end
+  
   def validate_wildcards
     offset = 0
     # Updating a pick
