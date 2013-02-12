@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206052803) do
+ActiveRecord::Schema.define(:version => 20130212185508) do
 
   create_table "nfl_teams", :force => true do |t|
     t.string   "location"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20130206052803) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.boolean  "is_favored_home_team"
+    t.integer  "favored_team_score"
+    t.integer  "under_team_score"
   end
 
   add_index "spreads", ["week"], :name => "index_spreads_on_week"
@@ -60,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20130206052803) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin"
+    t.string   "team_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -50,5 +50,10 @@ class Spread < ActiveRecord::Base
     name = name.sub('.','')
     name
   end
+  
+  # Download the nfl scores for the current week
+  def self.download_scores
+    puts "Test function"
+  end
         
 end
