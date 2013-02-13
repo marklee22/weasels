@@ -2,7 +2,7 @@
 <h1>Spreads</h1>
 <h3>Week <%= "#{@nfl_week} - #{@nfl_year}" %></h3>
 
-<%= link_to('Upload spreads', new_spread_path) %>
+<!-- <%= link_to('Upload spreads', new_spread_path) %> -->
 <%= form_tag({:action => :index }, :method => "get") do %>
 	<%= label_tag(:year, 'Year') %>
 	<%= select(:spread, :year, @years, :selected => @nfl_year)%>
