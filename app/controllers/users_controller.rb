@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @picks = @user.picks.order("created_at ASC")
+    @picks = @user.picks.find(:all, include: [:spread], order: 'spreads.week desc', conditions: "spreads.year = #{NFL_YEAR}")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -37,14 +37,14 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
+  
   def update
+    params[:user].delete([:password, :password_confirmation]) if params[:user][:password].blank?
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile updated"
-      sign_in(@user)
-      redirect_to(@user)
+      flash[:success] = "Profile updated."
+      sign_in(@user) if(current_user == @user)
+      redirect_to @user
     else
-      flash[:error] = "Profile not updated: #{@user.errors.messages}"
       render 'edit'
     end
   end

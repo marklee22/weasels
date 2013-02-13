@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
     length: { :maximum => 254 }, :format => { :with => VALID_EMAIL_REGEX }
   validates :first_name, :presence => true, length: { :maximum => 35 }
   validates :last_name, :presence => true, length: { :maximum => 35 }
-  validates :password, :presence => true, length: { :minimum => 6 }
-  validates :password_confirmation, :presence => true
-  
+  validates :password, :presence =>true, :confirmation => true, :length => { :within => 6..40 }, :on => :create
+  validates :password_confirmation, :presence => true, :length => { :within => 6..40 }, :on => :update, :unless => lambda{ |user| user.password.blank? }
+    
   def init
     self.admin ||= false
     self.team_name ||= "Team #{self.last_name}"
@@ -27,31 +27,62 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
   
+  # def pick_last_week
+  #   last_pick = ""
+  #   # NFL regular season is 17 weeks
+  #   if(NFL_WEEK > 0 && NFL_WEEK <= 17+1)
+  #     # Find the spreads
+  #     picks = self.picks.select{ |pick| spread = Spread.find_by_id(pick.spread_id)
+  #       spread.week == NFL_WEEK-1 && spread.year == NFL_YEAR}
+  #     ctr = 1
+  #     picks.each do |pick|
+  #       last_pick << "#{pick.nflTeam.team_name}"
+  #       if(pick.wildcard > 1)
+  #         last_pick << " x#{pick.wildcard}"
+  #       end
+  #       logger.info("#{picks.length} == #{ctr}")
+  #       if(picks.length != ctr)
+  #         last_pick << ", "
+  #       end
+  #       ctr += 1
+  #     end
+  #   end
+  #   if(last_pick.empty?)
+  #     '-'
+  #   else
+  #     last_pick
+  #   end
+  # end
+  
   def pick_last_week
     last_pick = ""
     # NFL regular season is 17 weeks
     if(NFL_WEEK > 0 && NFL_WEEK <= 17+1)
-      picks = self.picks.select{|pick| spread = Spread.find_by_id(pick.spread_id)
-        spread.week == NFL_WEEK-1 && spread.year == NFL_YEAR}
+      # Find the spreads
+      spreads = Spread.joins(:picks).where('picks.user_id = ?',self.id)
+      # logger.info(spreads)
+      spreads = spreads.where('week = ? and year = ?',NFL_WEEK-1,NFL_YEAR)
+      # logger.info(spreads)
       ctr = 1
-      picks.each do |pick|
+      spreads.each do |spread|
+        pick = spread.picks.find_by_user_id(self.id)
+        next if(pick.nil?)
         last_pick << "#{pick.nflTeam.team_name}"
         if(pick.wildcard > 1)
           last_pick << " x#{pick.wildcard}"
         end
-        logger.info("#{picks.length} == #{ctr}")
-        if(picks.length != ctr)
+        # logger.info("#{picks.length} == #{ctr}")
+        if(spreads.length != ctr)
           last_pick << ", "
         end
         ctr += 1
       end
+      if(last_pick.empty?)
+        '-'
+      else
+        last_pick
+      end
     end
-    if(last_pick.empty?)
-      '-'
-    else
-      last_pick
-    end
-    
   end
   
   def total_score
