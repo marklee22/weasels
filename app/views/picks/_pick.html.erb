@@ -12,11 +12,11 @@
 		<%= pick.wildcard %>
 	</td>
 	<td>
-		0
+		<%= pick.calculate_pick %>
 	</td>
 	<td>
 		<!-- Need to fix edit button still -->
-		<% if(current_user?(pick.user))%>
+		<% if(current_user?(pick.user) || current_user.admin?)%>
 			<%= link_to "edit", edit_pick_path(pick.id) %> |
 			<%= link_to "delete", pick, method: :delete, data: { confirm: "You sure?" }, title: pick.id %>
 		<% end %>

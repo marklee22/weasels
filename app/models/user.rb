@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation
+  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :admin, :team_name
   
   has_many :picks, dependent: :destroy
   validates_associated :picks
   
   before_save :create_remember_token
+  after_initialize :init
   before_save { |user| user.email = email.downcase }
 
   has_secure_password
@@ -16,6 +17,11 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => true, length: { :maximum => 35 }
   validates :password, :presence => true, length: { :minimum => 6 }
   validates :password_confirmation, :presence => true
+  
+  def init
+    self.admin ||= false
+    self.team_name ||= "Team #{self.last_name}"
+  end
   
   def full_name
     "#{self.first_name} #{self.last_name}"
@@ -53,7 +59,7 @@ class User < ActiveRecord::Base
     picks = Pick.find_all_by_user_id(self.id)
     picks.each do |pick|
       if(pick.spread.year == NFL_YEAR)
-        total += pick.spread.spread
+        total += pick.calculate_pick
       end
     end
     total

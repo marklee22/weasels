@@ -12,6 +12,24 @@ class Pick < ActiveRecord::Base
   validates :user_id, presence: true
   validates :wildcard, presence: true, :inclusion => 0..5
   
+  # Bills favored by 3.5
+  # Bills win 28 - 9
+  # favored: 28 - 9 - 3.5 = 22.5
+  # under: -(28-9) - 3.5 = -17.5
+  def calculate_pick
+    # Calculate multipliers
+    multipliers = 1
+    if(self.wildcard > 0)
+      multipliers = self.wildcard + 1
+    end
+    if(self.pick_team_id == self.spread.favored_team_id)
+      logger.debug("Pick total: #{self.spread.favored_team_score - self.spread.under_team_score - self.spread.spread}")
+      (self.spread.favored_team_score - self.spread.under_team_score - self.spread.spread) * multipliers
+    else
+      (-(self.spread.favored_team_score - self.spread.under_team_score) + self.spread.spread) * multipliers
+    end
+  end
+  
   def is_bye?
     self.bye
   end
@@ -61,9 +79,5 @@ class Pick < ActiveRecord::Base
         false
       end
     end
-  end
-  
-  def calculate_total
-  end
-    
+  end    
 end

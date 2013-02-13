@@ -11,7 +11,7 @@
 	<tbody>
 		<% @users.each do |user| %>
 			<tr>
-				<td><%= link_to "#{user.full_name}", user_path(user) %></td>
+				<td><%= link_to "#{user.team_name}", user_path(user) %></td>
 				<td><%= user.email %></td>
 				<td><%= user.pick_last_week %></td>
 				<td><%= user.total_score %></td>

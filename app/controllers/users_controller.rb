@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :update, :edit, :destroy]
   before_filter :correct_user, only: [:destroy, :update, :edit]
+  before_filter :admin_user, only: :destroy
+  
+  def members
+    @users = User.all    
+  end
   
   def index
     @users = User.all
@@ -39,6 +44,7 @@ class UsersController < ApplicationController
       sign_in(@user)
       redirect_to(@user)
     else
+      flash[:error] = "Profile not updated: #{@user.errors.messages}"
       render 'edit'
     end
   end
@@ -50,8 +56,12 @@ class UsersController < ApplicationController
   end
   
   private
+    def admin_user
+      redirect_to(root_path) unless(current_user.admin?)
+    end
+  
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless @user == current_user
+      redirect_to(root_path) unless(@user == current_user || current_user.admin?)
     end
 end

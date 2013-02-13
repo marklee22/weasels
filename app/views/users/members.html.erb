@@ -1,0 +1,26 @@
+<% provide(:title, 'Members') %>
+<h1>Edit Members</h1>
+
+<table class="table table-striped">
+	<thead>
+		<th>Team Name</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Paid?</th>
+		<th>Options</th>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.team_name %></td>
+				<td><%= user.full_name %></td>
+				<td><%= user.email %></td>
+				<td>Yes</td>
+				<td>
+					<%= link_to('Edit User', edit_user_path(user.id)) %> | 
+					<%= link_to('Delete User', user, method: :delete, data: { confirm: "Are you sure" }) %>					
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

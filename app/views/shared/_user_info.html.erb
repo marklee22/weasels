@@ -1,11 +1,13 @@
-<div class="row">
+<h3><%= @user.team_name %></h3>
+<div class="row main-body">
 	<aside class="span4">
 		<section>
-			<%= current_user.email %>
+			<%= @user.full_name %><br/>
+			<%= @user.email %>
 		</section>
 	</aside>
 	<div class="span8">
-		<% if(current_user.picks.any?) %>
+		<% if(@user.picks.any?) %>
 			<table class="table table-striped">
 				<thead>
 					<th>Week</th>

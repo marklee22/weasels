@@ -4,7 +4,11 @@ Weasels::Application.routes.draw do
       post 'upload'
     end
   end
-  resources :users
+  resources :users do
+    collection do
+      get 'members'
+    end
+  end
   resources :sessions, only: [:create, :destroy]
   resources :picks
   
