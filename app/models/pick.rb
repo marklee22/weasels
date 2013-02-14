@@ -30,10 +30,6 @@ class Pick < ActiveRecord::Base
     self.bye
   end
   
-  def has_wildcards?
-    self.wildcard > 0
-  end
-  
   def validate_wildcards
     offset = 0
     # Updating a pick

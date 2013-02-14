@@ -17,7 +17,15 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => true, length: { :maximum => 35 }
   validates :password, :presence =>true, :confirmation => true, :length => { :within => 6..40 }, :on => :create
   validates :password_confirmation, :presence => true, :length => { :within => 6..40 }, :on => :update, :unless => lambda{ |user| user.password.blank? }
-    
+  
+  def remaining_wildcards
+    MAX_WILDCARDS - self.picks.sum(:wildcard)
+  end
+  
+  def has_wildcards_left?
+    self.picks.sum(:wildcard) < MAX_WILDCARDS
+  end
+  
   def init
     self.admin ||= false
     self.team_name ||= "Team #{self.last_name}"

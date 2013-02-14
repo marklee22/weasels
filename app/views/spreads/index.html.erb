@@ -10,6 +10,7 @@
 	<%= select(:spread, :week, @weeks, :selected => @nfl_week) %><br/>
 	<%= submit_tag("Lookup") %>
 <% end %>
+<div class="spreads-wildcards">Wildcards Remaining: <%= current_user.remaining_wildcards %></div>
 <% if(@spreads) %>
 <table class="table table-striped">
 	<thead>
@@ -39,7 +40,11 @@
 					<% end %>
 				</td>
 				<td>
-					<%= link_to "Pick Game", { controller: 'picks', action: 'new', spread: spread.id } %>
+					<% if(current_user.picks.select(:spread_id).any? { |pick| pick.spread_id == spread.id }) %>
+						<%= link_to "Edit Pick", { controller: 'picks', action: 'edit', id: spread.picks.find_by_user_id(current_user.id).id } %>
+					<% elsif(current_user.has_wildcards_left?) %>
+						<%= link_to "Pick Game", { controller: 'picks', action: 'new', spread: spread.id } %>
+					<% end %>
 			</tr>
 		<% end %>
 	</tbody>
