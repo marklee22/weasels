@@ -1,28 +1,43 @@
 <h3><%= @user.team_name %></h3>
-<div class="row main-body">
-	<aside class="span4">
-		<section>
-			<%= @user.full_name %><br/>
-			<%= @user.email %>
-		</section>
-	</aside>
-	<div class="span8">
-		<% if(@user.picks.any?) %>
-			<table class="table table-striped">
-				<thead>
-					<th>Week</th>
-					<th>Pick</th>
-					<th>Points</th>
-					<th>Wildcards Used</th>
-					<th>Total</th>
-					<th>Options</th>
-				</thead>
-				<tbody>
-					<%= render @picks %>
-				</tbody>
-			</table>
-		<% else %>
-			No Picks
-		<% end %>
+<div class="row">
+	<div class="span3">
+		<div id="user-info">
+			<div class="user-pic"><%= image_tag @user.avatar.url(:medium), class: "img-polaroid" %></div>
+			<!-- <div class="user-full-name"><%= @user.full_name %></div>
+			<div class="user-email"><%= @user.email %></div> -->
+			<ul class="user-stats">
+				<li class="test"><span class="value"><%= @user.remaining_wildcards %></span><span class="title">Wildcards</span></li>
+				<li class="test"><span class="value"><%= @user.used_bye? %></span><span class="title">Bye</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="span9">
+		<div class="table" id="pick-table">
+			<div class="row">
+				<div class="week">
+					Week
+				</div>
+				<div class="pick-table-pick">
+					Pick
+				</div>
+				<div class="pick-table-wildcard">
+					Wildcards
+				</div>
+				<div class="pick-table-spread">
+					Spread
+				</div>
+				<div class="pick-table-score">
+					Net Score
+				</div>
+				<div class="pick-table-options">
+					Options
+				</div>
+			</div>
+			<% if(@user.picks.any?) %>
+				<%= render @picks %>
+			<% end %>
+		</div>
+	</div>
+		<div id="pick-total">0</div>
 	</div>
 </div>

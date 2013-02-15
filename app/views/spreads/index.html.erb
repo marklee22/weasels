@@ -42,7 +42,10 @@
 				<td>
 					<% if(current_user.picks.select(:spread_id).any? { |pick| pick.spread_id == spread.id }) %>
 						<%= link_to "Edit Pick", { controller: 'picks', action: 'edit', id: spread.picks.find_by_user_id(current_user.id).id } %>
-					<% elsif(current_user.has_wildcards_left?) %>
+						<% @pickFound = true %>
+					<% elsif(@pickFound) %>
+						<%= link_to "Pick Game", { controller: 'picks', action: 'new', spread: spread.id }, confirm: "Use a wildcard for this pick?" %>
+					<% else %>
 						<%= link_to "Pick Game", { controller: 'picks', action: 'new', spread: spread.id } %>
 					<% end %>
 			</tr>

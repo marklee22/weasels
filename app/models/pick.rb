@@ -12,6 +12,11 @@ class Pick < ActiveRecord::Base
   validates :user_id, presence: true
   validates :wildcard, presence: true, :inclusion => 0..5
   
+  def picked_favored?
+    self.pick_team_id == self.spread.favored_team.id
+  end
+  
+  # Calculate the net gain or loss of the pick based on the scores
   def calculate_pick
     # Calculate multipliers
     multipliers = 1

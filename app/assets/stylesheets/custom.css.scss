@@ -2,8 +2,22 @@
 
 /* Universal */
 
-.main-body {
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: url(image_path('bg_gradient.png')) repeat-x transparent;
+}
+
+#content {
 	min-height: 350px;
+}
+
+#content, #footer, #debug {
+	background: url(image_path('bg-content.png')) repeat-y;
 }
 
 .center {
@@ -16,7 +30,8 @@
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
-	line-height: 1
+	line-height: 1;
+	padding-left: 10px;
 }
 
 /* Sign In */
@@ -38,4 +53,104 @@ h1, h2, h3, h4, h5, h6 {
 	width: 400px;
 	margin-left: 173px;
 /*	border:1px solid #000;*/
+}
+
+/* User Profile */
+.pick-picked {
+	font-weight: bold;
+}
+
+.pick-correct {
+	background-color: DarkSeaGreen;
+}
+
+.pick-wrong {
+	background-color: IndianRed;
+}
+
+#pick-total {
+	font-weight: bold;
+	float: right;
+	padding-right: 10px;
+}
+
+#pick-table {
+	width: 100%;
+	margin: auto;
+	padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  display: table;
+	.row {
+		&:first-child {
+			font-weight: bold;
+		}
+		&:nth-child(odd) {
+			background-color: #f9f9f9;
+		}
+	  display: table-row;
+	  text-align: center;
+	  vertical-align: middle;
+	}
+	.week {
+  	display: table-cell;
+	  vertical-align: middle;
+		border: 1px solid black;
+	}
+	.pick-table-pick {
+		border: 1px solid black;
+  	display: table-cell;
+	}
+	.pick-table-wildcard {
+		border: 1px solid black;
+  	display: table-cell;
+	}
+	.pick-table-spread {
+		border: 1px solid black;
+  	display: table-cell;
+	}
+	.pick-table-score {
+		border: 1px solid black;
+  	display: table-cell;
+	}
+	.pick-table-options {
+		border: 1px solid black;
+  	display: table-cell;
+	}
+}
+
+#user-info {
+	padding-left: 10px;
+	div {
+		width: 200px;		
+	}
+	.user-pic {
+		padding-bottom: 10px;
+	}
+	.user-stats {
+		width: 100%;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		background-color:#f9f9f9;
+		li {
+			width: 80px;
+			border: 1px solid black;
+			float:left;
+			text-align: center;
+			padding: 5px;
+		}
+		.title {
+			font-size: 10px;
+			text-transform: uppercase;
+			color: #999999;
+		}
+		.value {
+			display: block;	
+			font-weight: bold;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+	}
 }

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :admin, :team_name
+  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :admin, :team_name, :avatar
   
   has_many :picks, dependent: :destroy
   validates_associated :picks
@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   after_initialize :init
   before_save { |user| user.email = email.downcase }
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename"
+    
   has_secure_password
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
@@ -17,6 +21,10 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => true, length: { :maximum => 35 }
   validates :password, :presence =>true, :confirmation => true, :length => { :within => 6..40 }, :on => :create
   validates :password_confirmation, :presence => true, :length => { :within => 6..40 }, :on => :update, :unless => lambda{ |user| user.password.blank? }
+  
+  def used_bye?
+    return false
+  end
   
   def remaining_wildcards
     MAX_WILDCARDS - self.picks.sum(:wildcard)
