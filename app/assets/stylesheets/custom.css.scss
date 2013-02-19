@@ -3,13 +3,14 @@
 /* Universal */
 
 html, body {
-	height: 100%;
+	height: auto;
+	min-height: 100%;
 	padding: 0;
 	margin: 0;
 }
 
 body {
-	background: url(image_path('bg_gradient.png')) repeat-x transparent;
+	background: url(image_path('bg_gradient.jpeg')) repeat-x transparent;
 }
 
 #content {
