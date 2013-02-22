@@ -9,14 +9,12 @@ class SpreadsController < ApplicationController
   def index
     @nfl_week ||= NFL_WEEK
     @nfl_year ||= NFL_YEAR
-    # week ||= NFL_WEEK
-    # year ||= NFL_YEAR
-    @weeks = Spread.where(:year => @nfl_year).order('week desc').uniq.pluck(:week)
-    @years = Spread.order('year desc').uniq.pluck(:year)
     if(params[:spread])
       @nfl_week = params[:spread][:week]
       @nfl_year = params[:spread][:year]
     end
+    @weeks = Spread.where(:year => @nfl_year).order('week desc').uniq.pluck(:week)
+    @years = Spread.order('year desc').uniq.pluck(:year)
     @spreads = Spread.where("year = ? AND week = ?", @nfl_year, @nfl_week)
   end
     

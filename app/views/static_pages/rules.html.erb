@@ -1,35 +1,94 @@
 <% provide(:title, 'Rules') %>
-<h1>Rules</h1>
+<h1>Rules and Frequently Asked Questions</h1>
+<p>This is a pick'em league where </p>
 
-<pre>
-Below you will see several things; the lines for this week, the payout schedule and the list of competitors. 
- 
-Here is a quick recap of the rules that will be strictly followed.
-1. Pick at least 1 team each week against the spread
-	a. If you take the Giants tomorrow, you start the game at -3.5.  If they win by 10 you get 6.5 points towards your season total.
-
-2. All picks must be submitted to    weaselsweekly@gmail.com
-	a. I will not take picks over the phone, in person or via text
-		i.      Note: we will not have the website this year, so all the picks need to go through email
-
-3. Your pick MUST be in before kickoff of the first Sunday game or you get the default pick.  If you want to choose a non Sunday game (like tomorrow), your pick needs to be in before the kickoff of that game. 
-	a. Default pick for a non submission is the HOME TEAM ON MONDAY NIGHT.  No, if you do not send in a pick, you cannot choose which team you want on Monday night.
-
-4. You must take 1 BYE during the season.  You get zero points for that week.  You must choose the BYE by telling us you want the bye.  If you go the whole season and never take the bye you will be disqualified
-
-5. You have 5 Wildcards for the season.  With the wildcards you can
-	a. Choose a single team multiple times
-		i. EX: Giants x3 would mean you are using your regular pick for the Giants + 2 wildcards.  Your score for the week will be tripled.
-	b.Choose multiple picks in one week
-		i. EX: Giants, Bears.  This would be your regular pick + 1 wildcard
-	c. You can also do combos where you select multiple teams and use wildcards
-		i.      EX: Giants x2, Bears.  This would be your regular pick + 2 wild cards
-	d. YOU DO NOT HAVE TO USE WILDCARDS IF YOU DON’T WANT TO
-
-6. The top 10 point earners make money and go to the playoffs.  The bottom 2 do not make money but also advance to the playoffs.
-
-7. During the playoffs, all points, wildcards and BYE reset to zero.  You get 1 more BYE and 3 wildcards.
-
-8. For full disclosure, Phil and I will send out our picks to the group sometime before the kickoff of the games we select.  No one else’s picks will be published until they are all in.  For the new people, we do this so that you know we are not waiting until games start and than making our picks.
-	a. My team name is “The King,” Phil’s is “iWeasel”
-</pre>
+<h2>Picks</h2>
+<div class="rules-list">
+	<dl>
+	<dt>How is my score calculated when I pick a game?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<%= image_tag(image_path('pick-ex1.png')) %>
+		<p>Using the spread above.  If you pick the favorite, you subtract 3.5 points from the final score.  If you pick the underdog, you add 3.5 points to the final score.</p>
+		<p>Picking the Favorite: <span class="positive-num">Favorite Score</span> - <span class="negative-num">(Underdog Score <b>+ Spread</b>)</p>
+		<p>Picking the Underdog: <span class="positive-num">(Favorite Score - <b class="negative-num">Spread</b>)</span> - <span class="negative-num">Underdog Score</p>
+	</dd>
+	<dt>Can I submit a pick through email, phone, or in-person?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>No, all picks must be submitted through the website.</p>
+	</dd>
+	<dt>When do I have to submit my pick by?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>All picks must be submitted before the first game on Sunday.  Picks for the Thursday game must be submitted before the kickoff of Thursday.</p>
+	</dd>
+	<dt>What happens if I do not submit a pick?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>If no pick is submitted by the first game of Sunday, you will be given the HOME TEAM of the last played game of the week.</p>
+	</dd>
+	<dt>How does the BYE work?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<ul>
+			<li>You only have <u>ONE</u> BYE per season.</li>
+			<li>A BYE indicates that no game will be picked for that week.</li>
+			<li>If you do not use your BYE before the last week of the season.  Your BYE will be applied to the last week.</li>
+		</ul>
+	</dd>
+	<dt>How do Wildcards work?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<ul>
+			<li>Every player has a total of <b><u>5</b></u> wildcards per season.</li>
+			<li>A wildcard can be used to pick an additional game per week. When choosing to do this, the wildcard will be applied automatically and no manual specification is required.</li>
+			<li>A wildcard may be used as a multiplier for the points gained.  For example, if you win by 10pts and applied 1 wildcard to your pick.  You would have a total of 20pts (10pts x 2).</li>
+			<li>You do not have to use all of your wildcards.</li>
+		</ul>
+	</dd>
+	</dl>
+</div>
+<br>
+<h2>Playoffs</h2>
+<div class="rules-list">
+	<dt>Do we pick playoff games too?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>Yes and no. There are playoffs in this league, but you qualify based on your total score in the regular season.</p>
+	</dd>
+	<dt>What is the criteria for qualifying for the playoffs?</td>
+	<dd class style="overflow: hidden; display: none;">
+		<p>You must satisfy one of these criteria to make the playoffs:</p>
+		<ul>
+			<li>One of the top 10 point earners</li>
+			<li>Bottom 2 point earners</li>
+		</ul>
+	</dd>
+</div>
+<br/>
+<h2>Payouts</h2>
+<div class="rules-list">
+	<dt>What is the entry fee?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>Entry fee is $150.</p>
+	</dd>
+	<dt>What are the payouts?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>Regular Season accounts for 70% and Playoffs account for 30%.</p>
+			<table style="float:left;">
+				<tr><td colspan="2">Regular Season</td></tr>
+				<tr><td>Place</td><td>Payout %</td></tr>
+				<tr><td>1</td><td>16.0%</td></tr>
+				<tr><td>2</td><td>12.0%</td></tr>
+				<tr><td>3</td><td>9.5%</td></tr>
+				<tr><td>4</td><td>7.0%</td></tr>
+				<tr><td>5</td><td>6.0%</td></tr>
+				<tr><td>6-10</td><td>3.48%</td></tr>
+			</table>
+			<table style="display:inline;">
+				<tr><td colspan="2">Playoff Season</td></tr>
+				<tr><td>Place</td><td>Payout %</td></tr>
+				<tr><td>1</td><td>50.0%</td></tr>
+				<tr><td>2</td><td>33.0%</td></tr>
+				<tr><td>3</td><td>17.0%</td></tr>
+			</table>
+	</dd>
+	<dt>How do we submit our entry fee?</dt>
+	<dd class style="overflow: hidden; display: none;">
+		<p>Paypal mother fucker! Do you use it!?!?!</p>
+	</dd>
+</div>
