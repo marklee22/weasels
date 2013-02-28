@@ -10,18 +10,22 @@ html, body {
 }
 
 body {
-	background: url(image_path('bg_gradient.jpeg')) repeat-x transparent;
+	background: #f9faf2 url(image_path('bg_gradient.jpeg')) repeat-x scroll left top;
 }
 
 #content {
 	min-height: 350px;
-	padding-left: 10px;
+}
+
+#main-content {
+	padding-left: 25px;
 }
 
 #content, #footer, #debug {
 	background: url(image_path('bg-content.png')) repeat-y;
 }
 
+/* Effects */
 .center {
 	text-align: center;
 	h1 {
@@ -37,11 +41,39 @@ body {
 	color: red;
 }
 
+.shadow {
+  box-shadow: 9px 6px 12px 2px #ccc;
+}
+
+.inner-shadow {
+   box-shadow: inset 0 0 17px grey;
+}
+
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
+	color: #A9A9A9;
 }
+
+h1 {
+	font-family:Baskerville,Times,'Times New Roman',serif;
+	font-size: 39px;
+	color:#1E90FF;
+	font-variant:small-caps;
+	text-align:center;
+	font-weight:bold;
+	padding:15px 0px 15px 0px; /* Tweak this to your liking */
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
 
 /* Sign In */
 
@@ -165,8 +197,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Rules */
 
+#rules {
+	#main-rules {
+		margin-left: auto;
+		margin-right: auto;
+		float: center;
+		width: 43%;
+		font-weight: bold;
+		padding-left: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background: lightyellow;
+	}
+	h2 {
+		margin-left: 45px;
+	}
+}
+
 .rules-list {
 	padding-left: 22px;
+	margin-left: 50px;
 }
 
 .rules-list dt {
@@ -179,11 +229,107 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .rules-list dd {
+	@extend .shadow;
 	color: #555555;
-	line-height: 150%;
+	line-height: 25px;
 	width: 80%;
+	border: 1px solid black;
+	padding: 3px;
+	p {
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	img {
+		border: 2px solid black;
+		float: center;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+	}
+	ul li {
+		line-height: 25px;
+	}
 }
 
 .rules-list dt.expanded {
 	background: url(image_path('bullet_arrow_down.gif')) 0px 14px no-repeat;
+}
+
+#rounded-corner {
+	width: 580px;
+	margin-left: auto;
+	margin-right: auto;
+}
+	
+.rounded-corner-table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	width: 40%;
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+	margin: 20px;
+	.rounded-corner-head {
+		text-align: center;
+		font-weight: bold;
+		color: #039;
+		font-size: 17px;
+		border-bottom: 1px solid black;
+		&:first-child {
+			div:first-child {
+				width: 97%;
+				font-weight: bold;
+				float: left;
+				background: #b9c9fe url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/left.png") left -1px no-repeat;
+			}
+			div:last-child {
+				background: #b9c9fe url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/right.png") right -1px no-repeat;			
+			}
+		}
+	 	&:not(:first-child) {
+			div:first-child {
+				float: left;
+			}
+			div:last-child {
+				float: right;
+			}
+			div {
+				width: 50%;
+				font-weight: normal;
+				font-size: 13px;
+				color: #039;
+				background: #b9c9fe;
+				font-weight: bold;
+			}
+		}
+	}
+	.rounded-corner-row {
+		text-align: center;
+		background: #e8edff;
+		border-top: 1px solid #fff;
+		color: #669;
+		&:hover {
+			background: #d0dafd;			
+		}
+		&:first-child {
+			color: #039;
+			background: #b9c9fe;			
+		}
+		div { 
+			display: inline-block;
+			width: 50%;
+		}
+	}
+	.rounded-corner-foot {
+		font-size: 10px;
+		div:first-child {	
+			float: left;
+			background: #e8edff url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/botleft.png") left bottom no-repeat;
+		}
+		div:last-child {
+			background: #e8edff url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/botright.png") right bottom no-repeat;
+		}
+	}
 }

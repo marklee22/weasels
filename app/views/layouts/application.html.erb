@@ -8,15 +8,17 @@
 </head>
 <body>
 	<%= render 'layouts/header' %>
-	<div class="container" id="content">		
-		<% if(!flash.empty?) %>
-			<% flash.each do |key, msg| %>
-				<div class="alert alert-<%= key %>">
-					<%= msg %>
-				</div>
+	<div class="container">
+		<div class="container" id="content">		
+			<% if(!flash.empty?) %>
+				<% flash.each do |key, msg| %>
+					<div class="alert alert-<%= key %>">
+						<%= msg %>
+					</div>
+				<% end %>
 			<% end %>
-		<% end %>
-		<%= yield %>
+			<%= yield %>
+		</div>
 	</div>
 	<%= render 'layouts/footer' %>
 	<div class="container" id="debug">
