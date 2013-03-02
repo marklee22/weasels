@@ -1,113 +1,111 @@
 <% provide(:title, 'Rules') %>
-<div id="main-content">
-	<div id="rules">
-		<h1>Rules and Frequently Asked Questions</h1>
-		<div id="main-rules" class="inner-shadow">
-		<p>Pick at least one game a week with the following extras:
-			<ul>
-				<li>Take a mandatory BYE once during the season</li>
-				<li>5 "wildcards" or game multipliers</li>
-			</ul>
-		</p>
-		</div>
+<div id="rules">
+	<h1>Rules and Frequently Asked Questions</h1>
+	<div id="main-rules" class="inner-shadow">
+	<p>Pick at least one game a week with the following extras:
+		<ul>
+			<li>Take a mandatory BYE once during the season</li>
+			<li>5 "wildcards" or game multipliers</li>
+		</ul>
+	</p>
+	</div>
 
-		<h2>Picks</h2>
-		<div class="rules-list">
-			<dl>
-			<dt>How is my score calculated when I pick a game?</dt>
+	<h2>Picks</h2>
+	<div class="rules-list">
+		<dl>
+		<dt>How is my score calculated when I pick a game?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<%= image_tag(image_path('pick-ex1.png')) %>
+			<p>Using the spread above.  If you pick the favorite, you subtract 3.5 points from the final score.  If you pick the underdog, you add 3.5 points to the final score.
+			<br/>Picking the Favorite: <span class="positive-num">Favorite Score</span> - <span class="negative-num">(Underdog Score <b>+ Spread</b>)</span>
+			<br/>Picking the Underdog: <span class="positive-num">(Favorite Score - <b class="negative-num">Spread</b>)</span> - <span class="negative-num">Underdog Score</p>
+		</dd>
+		<dt>Can I submit a pick through email, phone, or in-person?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<p>No, all picks must be submitted through the website.</p>
+		</dd>
+		<dt>When do I have to submit my pick by?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<p>All picks must be submitted before the first game on Sunday.  Picks for the Thursday game must be submitted before the kickoff of Thursday.</p>
+		</dd>
+		<dt>What happens if I do not submit a pick?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<p>If no pick is submitted by the first game of Sunday, you will be given the HOME TEAM of the last played game of the week.</p>
+		</dd>
+		<dt>How does the BYE work?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<ul>
+				<li>You only have <u>ONE</u> BYE per season.</li>
+				<li>A BYE indicates that no game will be picked for that week.</li>
+				<li>If you do not use your BYE before the last week of the season.  Your BYE will be applied to the last week.</li>
+			</ul>
+		</dd>
+		<dt>How do Wildcards work?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<ul>
+				<li>Every player has a total of <b><u>5</b></u> wildcards per season.</li>
+				<li>A wildcard can be used to pick an additional game per week. When choosing to do this, the wildcard will be applied automatically and no manual specification is required.</li>
+				<li>A wildcard may be used as a multiplier for the points gained.  For example, if you win by 10pts and applied 1 wildcard to your pick.  You would have a total of 20pts (10pts x 2).</li>
+				<li>You do not have to use all of your wildcards.</li>
+			</ul>
+		</dd>
+		</dl>
+	</div>
+	<br>
+	<h2>Playoffs</h2>
+	<div class="rules-list">
+		<div class="rules-section">
+			<dt>Do we pick playoff games too?</dt>
 			<dd class style="overflow: hidden; display: none;">
-				<%= image_tag(image_path('pick-ex1.png')) %>
-				<p>Using the spread above.  If you pick the favorite, you subtract 3.5 points from the final score.  If you pick the underdog, you add 3.5 points to the final score.
-				<br/>Picking the Favorite: <span class="positive-num">Favorite Score</span> - <span class="negative-num">(Underdog Score <b>+ Spread</b>)</span>
-				<br/>Picking the Underdog: <span class="positive-num">(Favorite Score - <b class="negative-num">Spread</b>)</span> - <span class="negative-num">Underdog Score</p>
+				<p>Yes and no. There are playoffs in this league, but you qualify based on your total score in the regular season.</p>
 			</dd>
-			<dt>Can I submit a pick through email, phone, or in-person?</dt>
+			<dt>What is the criteria for qualifying for the playoffs?</td>
 			<dd class style="overflow: hidden; display: none;">
-				<p>No, all picks must be submitted through the website.</p>
-			</dd>
-			<dt>When do I have to submit my pick by?</dt>
-			<dd class style="overflow: hidden; display: none;">
-				<p>All picks must be submitted before the first game on Sunday.  Picks for the Thursday game must be submitted before the kickoff of Thursday.</p>
-			</dd>
-			<dt>What happens if I do not submit a pick?</dt>
-			<dd class style="overflow: hidden; display: none;">
-				<p>If no pick is submitted by the first game of Sunday, you will be given the HOME TEAM of the last played game of the week.</p>
-			</dd>
-			<dt>How does the BYE work?</dt>
-			<dd class style="overflow: hidden; display: none;">
+				<p>You must satisfy one of these criteria to make the playoffs:</p>
 				<ul>
-					<li>You only have <u>ONE</u> BYE per season.</li>
-					<li>A BYE indicates that no game will be picked for that week.</li>
-					<li>If you do not use your BYE before the last week of the season.  Your BYE will be applied to the last week.</li>
+					<li>One of the top 10 point earners</li>
+					<li>Bottom 2 point earners</li>
 				</ul>
 			</dd>
-			<dt>How do Wildcards work?</dt>
-			<dd class style="overflow: hidden; display: none;">
-				<ul>
-					<li>Every player has a total of <b><u>5</b></u> wildcards per season.</li>
-					<li>A wildcard can be used to pick an additional game per week. When choosing to do this, the wildcard will be applied automatically and no manual specification is required.</li>
-					<li>A wildcard may be used as a multiplier for the points gained.  For example, if you win by 10pts and applied 1 wildcard to your pick.  You would have a total of 20pts (10pts x 2).</li>
-					<li>You do not have to use all of your wildcards.</li>
-				</ul>
-			</dd>
-			</dl>
 		</div>
-		<br>
-		<h2>Playoffs</h2>
-		<div class="rules-list">
-			<div class="rules-section">
-				<dt>Do we pick playoff games too?</dt>
-				<dd class style="overflow: hidden; display: none;">
-					<p>Yes and no. There are playoffs in this league, but you qualify based on your total score in the regular season.</p>
-				</dd>
-				<dt>What is the criteria for qualifying for the playoffs?</td>
-				<dd class style="overflow: hidden; display: none;">
-					<p>You must satisfy one of these criteria to make the playoffs:</p>
-					<ul>
-						<li>One of the top 10 point earners</li>
-						<li>Bottom 2 point earners</li>
-					</ul>
-				</dd>
-			</div>
-		</div>
-		<br/>
-		<h2>Payouts</h2>
-		<div class="rules-list">
-			<dt>What is the entry fee?</dt>
-			<dd class style="overflow: hidden; display: none;">
-				<p>Entry fee is $150.</p>
-			</dd>
-			<dt>What are the payouts?</dt>
-			<dd class style="overflow: hidden; display: none;">
-				<p>Regular Season accounts for 70% and Playoffs account for 30%.</p>
-					<div id="rounded-corner">
-						<div class="rounded-corner-table left">
-							<div class="rounded-corner-head"><div>Regular Season</div><div>&nbsp;</div></div>
-							<div class="rounded-corner-head"><div>Place</div><div>Payout %</div></div>
-							<div class="rounded-corner-row"><div>1</div><div>16.0%</div></div>
-							<div class="rounded-corner-row"><div>2</div><div>12.0%</div></div>
-							<div class="rounded-corner-row"><div>3</div><div>9.5%</div></div>
-							<div class="rounded-corner-row"><div>4</div><div>7.0%</div></div>
-							<div class="rounded-corner-row"><div>5</div><div>6.0%</div></div>
-							<div class="rounded-corner-row"><div>6-10</div><div>3.48%</div></div>
-							<div class="rounded-corner-foot"><div>*Payouts have not been finalized</div><div>&nbsp;</div>
-							</div>
-						</div>
-						<div class="rounded-corner-table right">
-							<div class="rounded-corner-head"><div>Playoffs</div><div>&nbsp;</div></div>
-							<div class="rounded-corner-head"><div>Place</div><div>Payout %</div></div>
-							<div class="rounded-corner-row"><div>1</div><div>50.0%</div></div>
-							<div class="rounded-corner-row"><div>2</div><div>33.0%</div></div>
-							<div class="rounded-corner-row"><div>3</div><div>17.0%</div></div>
-							<div class="rounded-corner-foot"><div>*Payouts have not been finalized</div><div>&nbsp;</div>
+	</div>
+	<br/>
+	<h2>Payouts</h2>
+	<div class="rules-list">
+		<dt>What is the entry fee?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<p>Entry fee is $150.</p>
+		</dd>
+		<dt>What are the payouts?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<p>Regular Season accounts for 70% and Playoffs account for 30%.</p>
+				<div id="rounded-corner">
+					<div class="rounded-corner-table left">
+						<div class="rounded-corner-head"><div>Regular Season</div><div>&nbsp;</div></div>
+						<div class="rounded-corner-head"><div>Place</div><div>Payout %</div></div>
+						<div class="rounded-corner-row"><div>1</div><div>16.0%</div></div>
+						<div class="rounded-corner-row"><div>2</div><div>12.0%</div></div>
+						<div class="rounded-corner-row"><div>3</div><div>9.5%</div></div>
+						<div class="rounded-corner-row"><div>4</div><div>7.0%</div></div>
+						<div class="rounded-corner-row"><div>5</div><div>6.0%</div></div>
+						<div class="rounded-corner-row"><div>6-10</div><div>3.48%</div></div>
+						<div class="rounded-corner-foot"><div>*Payouts have not been finalized</div><div>&nbsp;</div>
 						</div>
 					</div>
+					<div class="rounded-corner-table right">
+						<div class="rounded-corner-head"><div>Playoffs</div><div>&nbsp;</div></div>
+						<div class="rounded-corner-head"><div>Place</div><div>Payout %</div></div>
+						<div class="rounded-corner-row"><div>1</div><div>50.0%</div></div>
+						<div class="rounded-corner-row"><div>2</div><div>33.0%</div></div>
+						<div class="rounded-corner-row"><div>3</div><div>17.0%</div></div>
+						<div class="rounded-corner-foot"><div>*Payouts have not been finalized</div><div>&nbsp;</div>
+					</div>
 				</div>
-			</dd>
-			<dt>How do we submit our entry fee?</dt>
-			<dd class style="overflow: hidden; display: none;">
-				<p>Paypal mother fucker! Do you use it!?!?!</p>
-			</dd>
-		</div>
+			</div>
+		</dd>
+		<dt>How do we submit our entry fee?</dt>
+		<dd class style="overflow: hidden; display: none;">
+			<p>Paypal mother fucker! Do you use it!?!?!</p>
+		</dd>
 	</div>
 </div>

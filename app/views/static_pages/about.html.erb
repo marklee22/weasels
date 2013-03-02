@@ -1,6 +1,43 @@
 <% provide(:title, 'About') %>
-<h1>About</h1>
+<h1>About Us</h1>
 
-<pre>
-I needed to learn RoR and our Pick'Em League managed this previously solely through email.  I decided it would be a good starter project with a good cause.  Let me know if you'd like access to the source code as it is all on github.
-</pre>
+<div id="about-story">
+	<h3>The Story</h3>
+	<p>
+		In 2011, one of my friends invited me to a pick'em league with a few custom rules called "Weasels".
+		The first year I played, they had a website. It was basically a spreadsheet with a simple form to submit your pick
+		for that week. This did the job, but it was a lot of work for the league creator.
+	</p>
+	<p>
+		The following year, we got rid of the website and emailed our picks each week instead. Once again, this did the job, but deep down
+		the inner-developer in me wanted to create something better.
+	</p>
+	<p>
+		That brings us to 2013, where I wanted to learn <a href="http://rubyonrails.org/">Ruby on Rails (RoR)</a>.  I thought to myself
+		our Pick'Em League could greatly benefit from a fully functional website.	Not only was I able to find a starter project to help
+		me learn, but in the end, our league will	have a site that removes the burden of managing this all manually.
+	</p>
+	<p>
+		Currently this is a one man team, but <%= link_to("contact me", contact_path) %> if you'd like access to the source code to add some features as it is all on github.
+	</p>
+</div>
+<hr class="h-divider">
+<div>
+	<h3>The Team</h3>
+	<div class="about-profile">
+	
+		<%= image_tag('about/mark-profile.jpg', ) %>
+		<p>
+			This is Mark. Mark is the sole developer (for now) on this site. He is the author of the story in the previous section.
+		</p>
+		<p>
+			He likes long walks on the beach, sports,	and learning how to program.
+		</p>
+	</div>
+	<div class="about-profile">
+		<%= image_tag('about/weasel.jpg', ) %>
+		<p>
+			This is Chris. Chris is the creator of our league. I don't actually have a picture of him, but we'll just assume he's a weasel.
+		</p>
+	</div>
+</div>

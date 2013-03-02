@@ -1,10 +1,9 @@
 <% provide(:title, 'Spreads') %>
-<h1>Spreads</h1>
-<h3>Week <%= "#{@nfl_week} - #{@nfl_year}" %></h3>
+<h1>Spreads for Week <%= "#{@nfl_week} - #{@nfl_year}" %></h1>
 
 <!-- <%= link_to('Upload spreads', new_spread_path) %> -->
 <%= form_tag({:action => :index }, :method => "get", :id => "spread_form", :class => "form-inline") do %>
-	<%= label_tag(:year, 'Year') %>
+	<!-- <%= label_tag(:year, 'Year') %> -->
 	<%= select(:spread, :year, @years, { :selected => @nfl_year }, :class => "input-small") %>
 	<%= label_tag(:week, 'Week') %>
 	<%= select(:spread, :week, @weeks, { :selected => @nfl_week }, :class => "input-mini") %><br/>

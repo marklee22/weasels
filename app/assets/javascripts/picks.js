@@ -8,7 +8,7 @@ function sum_picks() {
 			// console.log(sum);
 		}
 	});
-	$('#pick-total').text('Total: '+ sum);
+	$('#pick-total ul li span.value').text(sum);
 };
 
 $(document).ready(function() {

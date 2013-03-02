@@ -19,6 +19,8 @@ body {
 
 #main-content {
 	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 20px;
 }
 
 #content, #footer, #debug {
@@ -49,6 +51,20 @@ body {
    box-shadow: inset 0 0 17px grey;
 }
 
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+hr.h-divider {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,21 +75,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-family:Baskerville,Times,'Times New Roman',serif;
 	font-size: 39px;
-	color:#1E90FF;
+	color:grey;
 	font-variant:small-caps;
 	text-align:center;
 	font-weight:bold;
 	padding:15px 0px 15px 0px; /* Tweak this to your liking */
 }
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
 
 /* Sign In */
 
@@ -97,6 +104,45 @@ h1 {
 }
 
 /* User Profile */
+#user-pick-table {
+	width: 650px;
+}
+
+#user-info {
+	div {
+		width: 200px;		
+	}
+	.user-pic {
+		padding-bottom: 10px;
+	}
+}
+
+.stat-box {
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color:#f9f9f9;
+	li {
+		width: 80px;
+		border: 1px solid black;
+		float:left;
+		text-align: center;
+		padding: 5px;
+	}
+	.title {
+		font-size: 10px;
+		text-transform: uppercase;
+		color: #999999;
+	}
+	.value {
+		display: block;	
+		font-weight: bold;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+}
+
 .pick-picked {
 	font-weight: bold;
 }
@@ -109,20 +155,14 @@ h1 {
 	background-color: IndianRed;
 }
 
-#pick-total {
-	font-weight: bold;
-	float: right;
-	padding-right: 10px;
-}
-
 #pick-table {
 	width: 100%;
 	margin: auto;
-	padding: 8px;
   line-height: 20px;
   text-align: left;
   vertical-align: top;
   display: table;
+	float: right;
 	.row {
 		&:first-child {
 			font-weight: bold;
@@ -141,58 +181,39 @@ h1 {
 	}
 	.pick-table-pick {
 		border: 1px solid black;
+		vertical-align: baseline;
   	display: table-cell;
 	}
 	.pick-table-wildcard {
 		border: 1px solid black;
   	display: table-cell;
+		vertical-align: middle;
 	}
 	.pick-table-spread {
 		border: 1px solid black;
   	display: table-cell;
+		vertical-align: middle;
 	}
 	.pick-table-score {
 		border: 1px solid black;
   	display: table-cell;
+		vertical-align: middle;
 	}
 	.pick-table-options {
 		border: 1px solid black;
   	display: table-cell;
+		vertical-align: middle;
 	}
 }
 
-#user-info {
-	div {
-		width: 200px;		
-	}
-	.user-pic {
-		padding-bottom: 10px;
-	}
-	.user-stats {
-		width: 100%;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		background-color:#f9f9f9;
-		li {
-			width: 80px;
-			border: 1px solid black;
-			float:left;
-			text-align: center;
-			padding: 5px;
-		}
-		.title {
-			font-size: 10px;
-			text-transform: uppercase;
-			color: #999999;
-		}
-		.value {
-			display: block;	
-			font-weight: bold;
-			font-size: 14px;
-			text-transform: uppercase;
-		}
-	}
+#pick-total {
+	font-weight: bold;
+	float: right;
+	clear: right;
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid black;	
+	text-align: right;
 }
 
 /* Rules */
@@ -331,5 +352,33 @@ h1 {
 		div:last-child {
 			background: #e8edff url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/botright.png") right bottom no-repeat;
 		}
+	}
+}
+
+/* About Page */
+.about-profile {
+	width: 85%;
+	margin: auto;
+	margin-bottom: 15px;
+	clear: both;
+	img {
+		vertical-align: middle;
+		float: left;
+		width: 200px;
+		margin: 10px 23px 10px 10px;
+	}
+	p {
+		color: #555;
+		font-size: 16px;
+		line-height: 1.8em;
+	}
+}
+
+#about-story {
+	p {
+		padding-bottom: 10px;
+		font-size: 14px;
+		line-height: 22px !important;
+		color: #333 !important;
 	}
 }

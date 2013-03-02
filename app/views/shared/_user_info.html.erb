@@ -5,13 +5,13 @@
 			<div class="user-pic"><%= image_tag @user.avatar.url(:medium), class: "img-polaroid" %></div>
 			<!-- <div class="user-full-name"><%= @user.full_name %></div>
 			<div class="user-email"><%= @user.email %></div> -->
-			<ul class="user-stats">
+			<ul class="stat-box">
 				<li class="test"><span class="value"><%= @user.remaining_wildcards %></span><span class="title">Wildcards</span></li>
 				<li class="test"><span class="value"><%= @user.used_bye? %></span><span class="title">Bye</span></li>
 			</ul>
 		</div>
 	</div>
-	<div class="span9">
+	<div class="span9" id="user-pick-table">
 		<div class="table" id="pick-table">
 			<div class="row">
 				<div class="week">
@@ -38,6 +38,9 @@
 			<% end %>
 		</div>
 	</div>
-		<div id="pick-total">0</div>
+		<div id="pick-total">
+			<ul class="stat-box">
+				<li><span class="value">0</span><span class="title">Total</span></li>
+		</div>
 	</div>
 </div>
